@@ -1,5 +1,6 @@
 var fs = require("fs");
 var http = require('http');
+var opn = require('opn');
 
 fs.readFile('./iconfont.css', 'utf-8', function (err, data) {
   if(err){
@@ -28,7 +29,7 @@ fs.readFile('./iconfont.css', 'utf-8', function (err, data) {
   }
 
   // 生成html
-  http.createServer(function(request, response){
+  let server = http.createServer(function(request, response){
     response.writeHead(200, {'Content-Type':'html'});
     response.write('<!DOCTYPE html>'+
                           '<html>'+
@@ -41,7 +42,8 @@ fs.readFile('./iconfont.css', 'utf-8', function (err, data) {
                           `<body>${iconStr}</body>`+
                           '</html>')
     response.end();
-  }).listen(8888)
+  })
+  server.listen(8888);
 
   //  TODO 自动打开浏览器
 
@@ -50,6 +52,7 @@ fs.readFile('./iconfont.css', 'utf-8', function (err, data) {
   */
  const ip = getIPAddress();
  console.log(`已运行${ip}:8888`)
+ opn(`http://${ip}:8888`)
  function getIPAddress(){
    var interfaces = require('os').networkInterfaces();
    for(var devName in interfaces) {

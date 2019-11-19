@@ -1,0 +1,23 @@
+{
+  "name": "showIconFromIconfont.css",
+  "version": "1.0.0",
+  "description": "展示一个iconfont.css文件中的所有类的样式。\r 操作：node ./index.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarod-Xie/showIconFromIconfont.css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jarod-Xie/showIconFromIconfont.css/issues"
+  },
+  "homepage": "https://github.com/Jarod-Xie/showIconFromIconfont.css#readme",
+  "devDependencies": {
+    "opn": "^6.0.0"
+  }
+}
